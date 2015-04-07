@@ -1,0 +1,211 @@
+.property-order-container h2{
+  margin-bottom: 8px;
+}
+.list-option{
+  margin-bottom: 10px;
+}
+.list-option span{
+  padding-right: 10px;
+}
+.wrapper-entity-setting{
+  margin-top: 10px;
+}
+.wrapper-entity-setting .group{
+  margin-bottom: 20px;
+}
+span{
+  font-weight: normal;
+}
+.wrapper-entity-setting .group  h3{
+  border-bottom: 1px solid #D3D3D3;
+  border-radius: 0;
+  outline: none;
+}
+#propertys h3.ui-state-active .title-box{
+  background: #fea219;
+  color: white;
+  text-shadow: none;
+}
+
+#propertys .ui-accordion-content-active .list-property li{
+  background: #E5E5E5;
+  border: 1px solid #C9C9C9;
+}
+.wrapper-entity-setting .group h3 .title-box{
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 15px;
+  border-radius: 0;
+  display: block;
+  font-weight: normal;
+  min-width: 220px;
+  white-space: nowrap;
+  background: #FCFCFC; /* Old browsers */
+  background: -moz-linear-gradient(top, #FCFCFC 0%, #E8E8E8 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FCFCFC), color-stop(100%,#E8E8E8)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #FCFCFC 0%,#E8E8E8 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #FCFCFC 0%,#E8E8E8 100%); /* Opera11.10+ */
+  background: -ms-linear-gradient(top, #FCFCFC 0%,#E8E8E8 100%); /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FCFCFC', endColorstr='#E8E8E8',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(top, #FCFCFC 0%,#E8E8E8 100%); /* W3C */
+  border: 1px solid #D3D3D3;
+  font-size:14px;
+  text-decoration: none;
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255,255,255,.8);
+  outline:none;
+  box-shadow: none;
+  border-bottom: none;
+  cursor: pointer;
+}
+.well{
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	padding: 12px 10px 13px 10px;
+}
+.btns-box{
+  position: relative;
+}
+.btns-box .btns{
+  position: absolute;
+  top: 2px;
+  right: 0;
+}
+.wrapper-entity-setting .group h3 .btns{
+  padding-top: 2px;
+  padding-right: 0px;
+}
+.wrapper-entity-setting .group a{
+  float: right;
+  text-decoration: none;
+}
+.wrapper-entity-setting .group a{
+  color: #E00012;
+  margin-left: 10px;
+  display:inline-block;
+  cursor:pointer;
+      white-space: nowrap;
+      background: #FCFCFC; /* Old browsers */
+      background: -moz-linear-gradient(top, #FCFCFC 0%, #E8E8E8 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FCFCFC), color-stop(100%,#E8E8E8)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, #FCFCFC 0%,#E8E8E8 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, #FCFCFC 0%,#E8E8E8 100%); /* Opera11.10+ */
+      background: -ms-linear-gradient(top, #FCFCFC 0%,#E8E8E8 100%); /* IE10+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FCFCFC', endColorstr='#E8E8E8',GradientType=0 ); /* IE6-9 */
+      background: linear-gradient(top, #FCFCFC 0%,#E8E8E8 100%); /* W3C */
+      border: 1px solid #D3D3D3;
+      font-size:14px;
+      text-decoration: none;
+      color: #333!important;
+      text-shadow: 0 1px 0 rgba(255,255,255,.8);
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      outline:none;
+      border-bottom-color:#B4B4B4!important;
+}
+.wrapper-entity-setting .group a:hover{
+  background: #eeeeee; /* Old browsers */
+  background: -moz-linear-gradient(top, #eeeeee 0%, #eeeeee 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #eeeeee 0%,#eeeeee 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #eeeeee 0%,#eeeeee 100%); /* Opera11.10+ */
+  background: -ms-linear-gradient(top, #eeeeee 0%,#eeeeee 100%); /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(top, #eeeeee 0%,#eeeeee 100%);
+  outline:none;/* W3C */
+}
+.wrapper-entity-setting .group a span{
+  display:inline-block;
+  padding:4px 10px 4px 27px;
+}
+.wrapper-entity-setting .group a.delete span{
+  background:url(../icons/delete-icon.png) 6px 4px no-repeat;
+}
+.wrapper-entity-setting .group .delete-row a{
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background:url(../icons/delete-icon.png) center center no-repeat;
+}
+.wrapper-entity-setting .group a.edit span{
+  background:url(../icons/edit-icon.png) 6px 4px no-repeat;
+}
+.wrapper-entity-setting .group a:hover{
+  text-decoration: underline;
+}
+.wrapper-entity-setting .group .content{
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 12px 15px 12px 15px;
+}
+.wrapper-entity-setting .group .content .list-property li{
+  background: #EEEEEE;
+  border: 1px solid #D8D8D8;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  display: block;
+}
+.wrapper-entity-setting .group .content .list-property li .delete-row a{
+  width: 18px;
+  height: 18px;
+}
+.b-modal h3{
+  font-weight: normal;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
+  margin-bottom: 15px; 
+}
+.b-modal .propertys{
+  width: 100%;
+  height: 610px;
+  overflow: auto;
+}
+.b-modal .propertys li{
+  background: #EEEEEE;
+  border: 1px solid #D8D8D8;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  display: block;
+  cursor: pointer;
+}
+.b-modal .propertys li input{
+  float: right;
+  margin-top: 4px;
+}
+.b-modal .search-block{
+  margin-bottom: 10px;
+}
+.b-modal .search-block input{
+  width: 220px;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.clearfix:after
+{
+    display: block;
+    visibility: hidden;
+    clear: both;
+
+    height: 0;
+
+    content: '.';
+}
+.clearfix
+{
+    zoom: 1;
+}
+.b-modal .search-block  .searchProd{
+  position: relative !important;
+  top: 3px !important;
+  right: 27px !important;
+}
