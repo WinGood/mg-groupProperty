@@ -19,9 +19,9 @@
             <div class="content-modal">
               <h3 id="result-title">Все характеристики</h3>
               <div class="propertys">
-                <?if(!empty($newProperty)):?>
+                <?if(!empty($allProperty)):?>
                 <ul>
-                  <?foreach($newProperty as $item):?>
+                  <?foreach($allProperty as $item):?>
                   <li>
                     <?=$item['name'];?>
                     <input type="checkbox" value="<?=$item['id'];?>" name="propertys[]">
@@ -92,7 +92,7 @@
             <span class="left title-box"><?=$group['name'];?></span>
           </h3>
           <div class="content">
-          <?if(!empty($group['property'])):?>
+          <?if(!empty($group['property']) && (is_array($group['property']))):?>
           <ul class="list-property">
             <?foreach($group['property'] as $property):?>
             <li id="<?=$property['id'];?>">

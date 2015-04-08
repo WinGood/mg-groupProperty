@@ -154,6 +154,26 @@ var groupProperty = (function() {
 
 			$('.admin-center').on('click','.add-property', function(){
 				admin.openModal($('.b-modal'));
+				admin.ajaxRequest({
+				  mguniqueurl: "action/getAllProperty",
+				  pluginHandler: 'group-property'
+				},
+
+				function(response) {
+				  var area   = $('.b-modal .propertys');
+				  var result = '';
+				  $(area).empty();
+				  if(response != ''){
+				  	result = '<ul>';
+				  	$.each(response, function(i, item){
+				  		result += '<li>'+response[i].name+'<input type="checkbox" value="'+response[i].id+'" name="propertys[]"></li>';
+				  	});
+				  	result += '</ul>';
+				  }
+				  $(area).append(result);
+				}
+
+				);
 				return false;
 			});
 

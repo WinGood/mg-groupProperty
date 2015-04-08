@@ -18,7 +18,7 @@ class GroupProperty
 		mgActivateThisPlugin(__FILE__, array(__CLASS__, 'activate'));
 		mgAddAction(__FILE__, array(__CLASS__, 'pageSettingsPlugin'));
 		mgAddShortcode('group-property', array(__CLASS__, 'handlerShortcode'));
-		
+
 		self::$path = PLUGIN_DIR.'group-property';
 	}
 	
@@ -50,7 +50,9 @@ class GroupProperty
 	{
 		echo '
 			<link rel="stylesheet" href="'.SITE.'/'.self::$path.'/css/settings.css" type="text/css" />
-			<script type="text/javascript" src="'.SITE.'/'.self::$path.'/js/admin.js"></script>
+			<script type="text/javascript">
+			  includeJS("'.SITE.'/'.self::$path.'/js/settings.js");  
+			</script>
 		';
 	}
 
@@ -104,13 +106,31 @@ class GroupProperty
 
 		if(DB::numRows($query) != 0){
 		  while($row = DB::fetchAssoc($query)){
-		    $row['property'] = unserialize($row['property']);
-		    if(!empty($row['property'])){
-		    	foreach($row['property'] as $key => $val){
-		    		$q_property = DB::query("SELECT id, name FROM `".PREFIX."property` WHERE id = ".$val."");
-		    		$r_property = DB::fetchAssoc($q_property);
-		    		$row['property'][$key] = $r_property;
+		  	$isDelete = false;
+		    $propertys = unserialize($row['property']);
+		    if(!empty($propertys)){
+		    	foreach($propertys as $key => $val){
+		    		$q_property = DB::query("SELECT id, name FROM `".PREFIX."property` WHERE id = ".$key."");
+		    		if(DB::numRows($q_property) != 0){
+						$r_property      = DB::fetchAssoc($q_property);
+						$propertys[$key] = $r_property;
+		    		} else {
+		    			// Если характеристика была удаленна из системы то соотвественно необходимо так же удалить ее из группы
+		    			unset($propertys[$key]);
+		    			$isDelete = true;
+		    		}
+		    		$row['property'] = $propertys;
 		    	}
+		    }
+		    if($isDelete){
+		    	$data = array();
+		    	foreach($row['property'] as $item){
+		    		$data[$item['id']] = $item['id'];
+		    	}
+		    	$save = array(
+		    		'property' => serialize($data)
+		    	);
+		    	DB::query('UPDATE `'.PREFIX.self::$pluginName.'` SET '.DB::buildPartQuery($save).' WHERE id = '.$row['id'].'');
 		    }
 		    $result[] = $row;
 		  }
@@ -129,7 +149,7 @@ class GroupProperty
 	{
 		$pluginName  = self::$pluginName;
 		$entity      = self::getEntity();
-		$newProperty = self::getAllProperty();
+		$allProperty = self::getAllProperty();
 		$options     = self::getPluginOptions();
 
 		

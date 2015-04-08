@@ -199,4 +199,9 @@ class Pactioner extends Actioner{
 
 		return false;
 	}
+
+	public function getAllProperty(){
+		$data = GroupProperty::getAllProperty();
+		echo json_encode($data);
+	}
 }
