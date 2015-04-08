@@ -18,52 +18,36 @@
 			<?$is_standart = false;?>
 			<div class="group-print-property">
 				<h3><?=$group['name'];?></h3>
-				<ul class="stats">
 				<?foreach($group['property'] as $property):?>
 					<?if(isset($property['active'])):?>
-					<li>
-					  <span class="name"><?=$property['name']?>:</span>
-					  <span class="value">
-					  <?=$property['value']?>
-					  </span>
-					</li>
+					<dl class="stats-list">
+						<dt>
+						  <span><?=$property['name'];?>:</span>
+						</dt>
+						<dd>
+							<span>
+							<?=$property['value'];?>
+							</span>
+						</dd>
+					</dl>
 					<?endif;?>
 				<?endforeach;?>
-				</ul>
 			</div>
 		<?endif?>
 	<?endforeach;?>
 <?endif?>
 <?if((!empty($data['thisUserFields'])) && ($is_standart)):?>
-	<?$i=0;?>
-	<?$left = ''; $right = '';?>
 	<?foreach($data['thisUserFields'] as $property):?>
 	<?if(($property['type'] != 'string') || ($property['name'] == 'Руководство') || ($property['name'] == 'Обзор') || ($property['name'] == 'Окончание акции (дд.мм.гггг)') ){continue;}?>
-	<?$content = '
-		<li>
-		  <span class="name">'.$property['name'].':</span>
-		  <span class="value">
-		  '.$property['value'].'
-		  </span>
-		</li>
-	';?>
-	<?if(($i % 2) == 0){ $left .= $content;} else { $right .= $content; }?>
-	<?$i++;?>
+	<dl class="stats-list">
+		<dt>
+		  <span><?=$property['name'];?>:</span>
+		</dt>
+		<dd>
+			<span>
+			<?=$property['value'];?>
+			</span>
+		</dd>
+	</dl>
 	<?endforeach;?>
-	<?endif;?>
-
-	<?if(!empty($right)):?>
-	<div class="right">
-		<ul class="stats">
-			<?=$right;?>
-		</ul>
-	</div>
-	<?endif;?>
-
-	<?if(!empty($left)):?>
-	<div class="left">
-		<ul class="stats">
-			<?=$left;?>
-		</ul>
-	</div>
 <?endif;?>
